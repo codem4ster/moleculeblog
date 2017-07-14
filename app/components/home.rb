@@ -8,7 +8,7 @@ class Home
   end
 
   def click_but
-    user_data[:username] = 'Osman'
+    user_data!(username: 'blah', password: '123456')
     render!
   end
 
