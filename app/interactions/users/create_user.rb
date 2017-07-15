@@ -3,8 +3,10 @@ module Users
   class CreateUser < ActiveInteraction::Base
     string :username
     string :password
+    object :session, class: Molecule::Session
 
     def execute
+      session.set(:password, password)
       { username: username, password: password }
     end
   end
