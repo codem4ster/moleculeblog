@@ -5,6 +5,7 @@ module Users
 
     def render
       div { 'Create User' }
+      a(href: '/') { 'Anasayfa' }
     end
   end
 end

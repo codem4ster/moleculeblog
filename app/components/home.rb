@@ -8,8 +8,7 @@ class Home
   end
 
   def click_but
-    user_data!(username: 'blah', password: '123456')
-    render!
+    router.go_to '/users/create'
   end
 
   def render
