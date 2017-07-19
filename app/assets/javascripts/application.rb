@@ -1,4 +1,5 @@
 require 'molecule'
+require 'materialize/js/bin/materialize.min'
 require 'components'
 require 'router'
 

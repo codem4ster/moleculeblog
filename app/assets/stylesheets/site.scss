@@ -1,0 +1,32 @@
+@import "fonts";
+
+.box {
+  box-shadow: 0 0 8px 1px #353535;
+  color: white;
+  background: asset_url("code.jpg");
+  padding: 15px 0;
+  margin: 0 0 15px 0;
+}
+
+header {
+  background-color: #d8d8d8;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  color: #2E2F30;
+}
+
+.container.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crumb {
+  font-size: 1rem;
+  line-height: 1;
+  vertical-align: top;
+  margin-left: 2px;
+  &.active {
+    text-shadow: 1px 1px 1px #bbafaf;
+  }
+}
