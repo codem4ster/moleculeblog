@@ -15,6 +15,17 @@ header {
   color: #2E2F30;
 }
 
+.page-footer {
+  padding: 15px 0;
+  background-color: #030F29;
+  font-size: 14px;
+  box-shadow: 0 0 8px 1px #525252;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .container.head {
   display: flex;
   justify-content: space-between;

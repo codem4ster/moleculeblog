@@ -3,9 +3,11 @@ module Layouts
     include Molecule::Component
 
     def render
-      div.main! do
+      component Partials::Header
+      main do
         component props[:child]
       end
+      component Partials::Footer
     end
   end
 end

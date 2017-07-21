@@ -5,7 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bcrypt'
 gem 'molecule', path: '../molecule'
+gem 'mongoid'
+gem 'mongoid_alize'
 gem 'opal-rails'
 gem 'slim'
 

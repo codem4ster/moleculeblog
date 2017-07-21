@@ -1,5 +1,6 @@
 require 'molecule'
 require 'materialize/js/bin/materialize.min'
+require 'packages'
 require 'components'
 require 'router'
 
@@ -11,7 +12,7 @@ class Application
   inject Router
 
   def render
-    component Layouts::Wrapper
+    component router
   end
 end
 

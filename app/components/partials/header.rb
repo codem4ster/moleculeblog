@@ -2,8 +2,12 @@ module Partials
   class Header
     include Molecule::Component
 
+    def breadcrumb_items
+      [{ 'Bir delinin hatıra defteri' => '/bir-delinin-hatira-defteri' }]
+    end
+
     def render
-      header do
+      header class: 'main' do
         div.box do
           div.container class: 'head' do
             h2 'Codemaniac.net'
@@ -11,10 +15,7 @@ module Partials
           end
         end
         div.container do
-          i.tiny.material_icons { 'home' }
-          span.crumb { 'Anasayfa' }
-          i.tiny.material_icons { 'chevron_right' }
-          span.crumb.active { 'Bir delinin hatıra defteri' }
+          component Breadcrumbs, props: { items: breadcrumb_items }
         end
       end
     end
