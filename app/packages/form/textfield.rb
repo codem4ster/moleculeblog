@@ -9,6 +9,7 @@ module Form
 
     def render
       div.input_field do
+        yield if block_given?
         input(type: 'text', id: props[:name],
               name: props[:name], value: props[:value])
         label(for: props[:name], class: active?) { props[:label] }

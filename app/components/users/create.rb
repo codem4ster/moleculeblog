@@ -10,6 +10,10 @@ module Users
       user_data!(username: 'user', password: '123456')
     end
 
+    def after_render
+      self.user_data = {}
+    end
+
     def submit
       data = Element['#create_user'].serialize_hash
       user_data! data
@@ -29,7 +33,7 @@ module Users
                      value: user_data[:username])
           text_field(label: 'Şifre', name: 'password',
                      value: user_data[:password])
-          input.btn.btn_default(type: 'Button', value: 'Gönder',
+          input.btn.btn_default(type: 'button', value: 'Gönder',
                                 onclick: method(:submit))
         end
       end

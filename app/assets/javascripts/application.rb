@@ -3,6 +3,7 @@ require 'materialize/js/bin/materialize.min'
 require 'packages'
 require 'components'
 require 'router'
+require 'validation'
 
 
 # Main application class for frontend
