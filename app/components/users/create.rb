@@ -6,12 +6,8 @@ module Users
 
     interaction :user_data, 'Users/CreateUser'
 
-    init do
+    def shared_before
       user_data!(username: 'user', password: '123456')
-    end
-
-    def after_render
-      self.user_data = {}
     end
 
     def submit
@@ -26,6 +22,7 @@ module Users
         end
         hr
         h3 'Yeni Kullanıcı Oluştur'
+        span.test { 'Bişey' }
         br
         br
         form.create_user! do

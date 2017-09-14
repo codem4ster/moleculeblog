@@ -7,8 +7,10 @@ class Home
   end
 
   def render
-    div.home!.container do
-      a(href: '/users/create') { 'Kullanıcı Oluştur' }
+    component Layouts::TwoColumn do
+      div.home!.container(readonly: true) do
+        a(href: '/users/create') { 'Kullanıcı Oluştur' }
+      end
     end
   end
 end
