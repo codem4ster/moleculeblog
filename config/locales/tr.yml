@@ -1,0 +1,10 @@
+tr:
+  hello: 'Merhaba'
+  active_interaction:
+    models:
+      users/register: 'Kaydol'
+    attributes:
+      users/register:
+        username: 'Kullanıcı adı'
+        password: 'Şifre'
+        email: 'E-Posta'

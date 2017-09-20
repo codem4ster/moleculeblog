@@ -10,7 +10,9 @@ gem 'molecule', path: '../molecule'
 gem 'mongoid'
 gem 'mongoid_alize'
 gem 'opal-rails'
+gem 'rails-i18n', '~> 5.0.0'
 gem 'slim'
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

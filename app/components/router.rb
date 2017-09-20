@@ -3,6 +3,6 @@ class Router
 
   def routes
     route '/', to: Layouts::Main, props: { child: Home }
-    route '/users/create', to: Layouts::Main, props: { child: Users::Create }
+    route '/kullanici/olustur', to: Layouts::Main, props: { child: Users::RegisterPage }
   end
 end

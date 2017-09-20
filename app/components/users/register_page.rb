@@ -1,24 +1,26 @@
 module Users
   # Create user
-  class Create
+  class RegisterPage
     include Molecule::Component
     include FormPackage
 
-    interaction :user_data, 'Users/CreateUser'
+    interaction :register, 'Users/Register'
 
-    def shared_before
-      user_data!(username: 'user', password: '123456')
-    end
+    # def shared_before
+    #   sign_up!(username: 'user', password: '123456')
+    # end
 
     def submit
-      data = Element['#create_user'].serialize_hash
-      user_data! data
+      form_data = Element['#create_user'].serialize_hash
+      register! form_data
     end
 
     def render
       div.users_create!.container do
-        if user_data
-          h2 { "Merhaba #{user_data[:username]}" }
+        if register?[:success]
+          h2 { "Merhaba #{register[:resp]}" }
+        else
+          pp register?[:errors]
         end
         hr
         h3 'Yeni Kullanıcı Oluştur'
@@ -27,9 +29,9 @@ module Users
         br
         form.create_user! do
           text_field(label: 'Kullanıcı Adı', name: 'username',
-                     value: user_data[:username])
+                     value: '')
           text_field(label: 'Şifre', name: 'password',
-                     value: user_data[:password])
+                     value: '')
           input.btn.btn_default(type: 'button', value: 'Gönder',
                                 onclick: method(:submit))
         end
