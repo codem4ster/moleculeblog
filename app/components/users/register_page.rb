@@ -11,7 +11,7 @@ module Users
     # end
 
     def submit
-      form_data = Element['#create_user'].serialize_hash
+      form_data = Element['#create_user'].serialize_hash(self)
       register! form_data
     end
 
@@ -29,9 +29,9 @@ module Users
         br
         form.create_user! do
           text_field(label: 'Kullanıcı Adı', name: 'username',
-                     value: '')
+                     value: @username)
           text_field(label: 'Şifre', name: 'password',
-                     value: '')
+                     value: @password)
           input.btn.btn_default(type: 'button', value: 'Gönder',
                                 onclick: method(:submit))
         end
