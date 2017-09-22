@@ -29,9 +29,9 @@ module Users
         br
         form.create_user! do
           text_field(label: 'Kullanıcı Adı', name: 'username',
-                     value: @username)
+                     value: @username, error: register?[:errors][:username])
           text_field(label: 'Şifre', name: 'password',
-                     value: @password)
+                     value: @password, error: register?[:errors][:password])
           input.btn.btn_default(type: 'button', value: 'Gönder',
                                 onclick: method(:submit))
         end

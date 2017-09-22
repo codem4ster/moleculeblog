@@ -7,12 +7,16 @@ module Form
       props[:value] ? 'active' : ''
     end
 
+    def invalid?
+      props[:error].nil? ? 'validate' : 'validate invalid'
+    end
+
     def render
       div.input_field do
         yield if block_given?
-        input(type: 'text', id: props[:name],
+        input(type: 'text', id: props[:name], class: invalid?,
               name: props[:name], value: props[:value])
-        label(for: props[:name], class: active?) { props[:label] }
+        label(for: props[:name], class: active?, data: { error: props[:error] }) { props[:label] }
       end
     end
   end
